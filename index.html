@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux dla Bartka</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .button-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .message {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .robux {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Robux.svg/2048px-Robux.svg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <button id="robux-button">Bartek kliknij</button>
+        <div class="message" id="message">Prosze daj chociaż 500 robux.</div>
+    </div>
+
+    <script>
+        const button = document.getElementById('robux-button');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            button.style.transform = 'scale(1.5)';
+            button.style.transition = 'transform 0.5s';
+            setTimeout(() => {
+                button.style.display = 'none';
+                message.style.display = 'block';
+                setTimeout(() => {
+                    message.style.opacity = '1';
+                }, 100);
+            }, 1500);
+        });
+
+        function createRobux() {
+            const robux = document.createElement('div');
+            robux.classList.add('robux');
+            robux.style.left = Math.random() * 100 + 'vw';
+            robux.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(robux);
+
+            robux.addEventListener('animationend', () => {
+                robux.remove();
+            });
+        }
+
+        setInterval(createRobux, 300);
+    </script>
+
+</body>
+</html>
