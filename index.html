@@ -3,112 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robux dla Bartka</title>
+    <title>100 powodów, dla których się z tobą przyjaźnię</title>
     <style>
+        /* Ciemny motyw */
         body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: white;
+            background-color: #121212;
+            color: #e0e0e0;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            position: relative;
+            min-height: 100vh;
+            margin: 0;
         }
 
-        .button-container {
-            position: relative;
-            z-index: 1;
+        .container {
+            text-align: center;
+            max-width: 600px;
         }
 
-        button {
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #bb86fc;
+        }
+
+        #clickButton {
+            background-color: #03dac6;
+            color: #121212;
             padding: 15px 30px;
-            font-size: 20px;
-            background-color: white;
-            color: black;
-            border: 2px solid black;
-            border-radius: 5px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+            transition: transform 0.3s ease;
         }
 
-        button:hover {
-            background-color: black;
-            color: white;
+        #clickButton:hover {
             transform: scale(1.1);
         }
 
-        .message {
+        #reasons {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
             display: none;
-            font-size: 24px;
-            font-weight: bold;
-            color: black;
+            text-align: left;
+        }
+
+        #reasons li {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
             opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .robux {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Robux.svg/2048px-Robux.svg.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.5;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            from {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 0.8;
-            }
-            to {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0.3;
-            }
+            transform: translateX(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
     </style>
 </head>
 <body>
 
-    <div class="button-container">
-        <button id="robux-button">Bartek kliknij</button>
-        <div class="message" id="message">Prosze daj chociaż 500 robux.</div>
-    </div>
+<div class="container">
+    <h1>100 powodów, dla których się z tobą przyjaźnię</h1>
+    <button id="clickButton">Kliknij</button>
+    <ul id="reasons">
+        <!-- Tutaj są powody do wyświetlenia -->
+        <li>Jesteś zawsze przy mnie.</li>
+        <li>Masz świetne poczucie humoru.</li>
+        <li>Rozumiesz mnie jak nikt inny.</li>
+        <!-- Dodaj tutaj kolejne powody, aż do 100 -->
+    </ul>
+</div>
 
-    <script>
-        const button = document.getElementById('robux-button');
-        const message = document.getElementById('message');
+<script>
+    document.getElementById("clickButton").addEventListener("click", function() {
+        const reasons = document.getElementById("reasons");
+        reasons.style.display = "block";
+        const listItems = reasons.querySelectorAll("li");
 
-        button.addEventListener('click', () => {
-            button.style.transform = 'scale(1.5)';
-            button.style.transition = 'transform 0.5s';
+        // Animacja pojawienia się powodów jeden po drugim
+        listItems.forEach((item, index) => {
             setTimeout(() => {
-                button.style.display = 'none';
-                message.style.display = 'block';
-                setTimeout(() => {
-                    message.style.opacity = '1';
-                }, 100);
-            }, 1500);
+                item.style.opacity = 1;
+                item.style.transform = "translateX(0)";
+            }, index * 100); // czas między kolejnymi punktami
         });
-
-        function createRobux() {
-            const robux = document.createElement('div');
-            robux.classList.add('robux');
-            robux.style.left = Math.random() * 100 + 'vw';
-            robux.style.animationDuration = Math.random() * 3 + 2 + 's';
-            document.body.appendChild(robux);
-
-            robux.addEventListener('animationend', () => {
-                robux.remove();
-            });
-        }
-
-        setInterval(createRobux, 300);
-    </script>
+    });
+</script>
 
 </body>
 </html>
