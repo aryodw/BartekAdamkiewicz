@@ -6,15 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     tosButton.addEventListener('click', (event) => {
         event.preventDefault();
         modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Disable scrolling
     });
 
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
     });
 
     window.addEventListener('click', (event) => {
         if (event.target == modal) {
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
         }
     });
 });
