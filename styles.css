@@ -1,117 +1,85 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #2f3136;
-    color: white;
+html, body {
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Zapobiega przewijaniu */
+    font-family: Arial, sans-serif; /* Ustawia czcionkę */
 }
 
-header {
-    background-color: #202225;
-    padding: 20px;
-    text-align: center;
+.background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ustawia tło za inną zawartością */
 }
 
-h1 {
-    animation: fadeIn 1s ease-in-out;
+.background-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Utrzymuje proporcje obrazu */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Ustawia zawartość nad tłem */
+    color: white; /* Kolor tekstu, aby był czytelny na tle */
+    text-align: center; /* Wyśrodkowuje tekst */
+    padding: 20px; /* Odstęp dla treści */
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Usuwa punkty listy */
+    padding: 0; /* Usuwa domyślne wypełnienie */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline; /* Wyświetla elementy w jednym wierszu */
+    margin: 0 15px; /* Odstęp między elementami */
 }
 
 nav a {
-    color: #7289da;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: white; /* Kolor linków */
+    text-decoration: none; /* Usuwa podkreślenie */
 }
 
 nav a:hover {
-    color: #43b581;
-    transform: scale(1.1);
+    text-decoration: underline; /* Podkreślenie przy najechaniu */
 }
 
-main {
-    padding: 20px;
-}
-
-h2 {
-    color: #43b581;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
+/* Styles modal */
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none; /* Ukrywa modal domyślnie */
+    position: fixed;
+    z-index: 10; /* Na wierzchu */
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.8);
-    padding-top: 60px;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Włącza przewijanie */
+    background-color: rgb(0,0,0); /* Czarny z przezroczystością */
+    background-color: rgba(0,0,0,0.7); /* Ciemne tło */
 }
 
 .modal-content {
-    background-color: #36393f;
-    margin: 5% auto; 
+    background-color: #fefefe;
+    margin: 15% auto; /* Pozycjonuje w środku */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
-    animation: bounceIn 0.5s;
-}
-
-.bounce-in {
-    animation: bounceIn 0.5s;
-}
-
-@keyframes bounceIn {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
+    width: 80%; /* Szerokość modala */
 }
 
 .close-button {
     color: #aaa;
-    float: right;
+    float: right; /* Ustawia przycisk w prawym górnym rogu */
     font-size: 28px;
     font-weight: bold;
-    transition: color 0.3s;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: #ff5c5c;
-    cursor: pointer;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #202225;
+    color: black; /* Zmienia kolor na czarny przy najechaniu */
+    text-decoration: none; /* Usuwa podkreślenie */
+    cursor: pointer; /* Kursor wskazujący */
 }
