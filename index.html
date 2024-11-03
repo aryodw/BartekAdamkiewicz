@@ -5,84 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aryo Corner</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1 class="fade-in">Aryo Corner</h1>
+    <div class="background-gif">
+        <img src="webiste.gif" alt="Tło GIF" />
+    </div>
+    <div class="content">
+        <h1>Witaj w Aryo Corner!</h1>
+        <p>Znajdziesz tutaj wiele ciekawych rzeczy!</p>
         <nav>
             <ul>
-                <li><a href="#about" class="nav-link">O nas</a></li>
-                <li><a href="#contact" class="nav-link">Kontakt</a></li>
-                <li><a href="#tos" id="tos-button" class="nav-link">TOS</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#tos" id="tos-button">TOS</a></li>
             </ul>
         </nav>
-    </header>
-    
-    <main>
-        <section id="about" class="fade-in">
-            <h2>O nas</h2>
-            <p>Witamy w Aryo Corner, miejscu dla wszystkich entuzjastów! Dołącz do naszej społeczności i baw się dobrze.</p>
-        </section>
-        
-        <section id="contact" class="fade-in">
-            <h2>Kontakt</h2>
-            <p>Masz pytania? Napisz do nas na <a href="mailto:contact@aryocorner.com">contact@aryocorner.com</a>.</p>
-        </section>
-    </main>
+    </div>
 
-    <div id="modal" class="modal">
-        <div class="modal-content bounce-in">
+    <div id="tos-modal" class="modal">
+        <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Discord Server Rules</h2>
+
             <h3>General Conduct</h3>
-            <ul>
-                <li><strong>Respect and Kindness:</strong> Treat all members with respect and kindness...</li>
-                <li><strong>No Hate Speech:</strong> Hate speech is strictly prohibited...</li>
-                <li><strong>Language:</strong> Use appropriate language at all times...</li>
-                <li><strong>Privacy and Personal Information:</strong> Do not share anyone’s personal information...</li>
-            </ul>
+            <p>
+                <strong>Respect and Kindness:</strong> Treat all members with respect and kindness. Discrimination, hate speech, bullying, or harassment of any kind will not be tolerated. Engage in discussions with an open mind, and be considerate of differing opinions.
+            </p>
+            <p>
+                <strong>No Hate Speech:</strong> Hate speech, including racist, sexist, homophobic, or otherwise discriminatory remarks, is strictly prohibited. We celebrate diversity and aim to create an inclusive environment for all members.
+            </p>
+            <p>
+                <strong>Language:</strong> Use appropriate language at all times. Swearing is allowed but should not be excessive or directed at other members. Refrain from using slurs or derogatory terms, even in jest.
+            </p>
+            <p>
+                <strong>Privacy and Personal Information:</strong> Do not share anyone’s personal information, including real names, addresses, or phone numbers, without their consent. Respect everyone’s privacy; if someone chooses not to share personal details, do not pressure them.
+            </p>
+
             <h3>Chat and Communication</h3>
-            <ul>
-                <li><strong>Channel Guidelines:</strong> Each channel has a specific purpose...</li>
-                <li><strong>No Spamming:</strong> Spamming is defined as sending repetitive messages...</li>
-                <li><strong>Tagging and Mentions:</strong> Avoid tagging multiple users unnecessarily...</li>
-                <li><strong>No Advertising:</strong> Do not advertise other Discord servers...</li>
-            </ul>
+            <p>
+                <strong>Channel Guidelines:</strong> Each channel has a specific purpose. Please adhere to the channel topics and use them accordingly (e.g., use #gaming for gaming discussions, #memes for sharing memes). Off-topic conversations should be moved to #off-topic or other relevant channels.
+            </p>
+            <p>
+                <strong>No Spamming:</strong> Spamming is defined as sending repetitive messages, excessive emojis, or flood reactions. This behavior disrupts conversations and is not allowed. Keep conversations meaningful and relevant.
+            </p>
+            <p>
+                <strong>Tagging and Mentions:</strong> Avoid tagging multiple users unnecessarily. Only use @here or @everyone for important announcements or emergencies, and ensure it aligns with server rules. When responding to someone, tag them only if necessary, and consider their visibility and notifications.
+            </p>
+            <p>
+                <strong>No Advertising:</strong> Do not advertise other Discord servers, social media accounts, or personal businesses without prior permission from the server staff. Self-promotion is only allowed in designated channels, following specific guidelines.
+            </p>
+
             <h3>Voice Channels</h3>
-            <ul>
-                <li><strong>Voice Channel Behavior:</strong> Be mindful of your microphone settings...</li>
-                <li><strong>Respecting Others' Speaking Time:</strong> Allow others to finish speaking...</li>
-                <li><strong>No Trolling:</strong> Trolling in voice channels is prohibited...</li>
-            </ul>
+            <p>
+                <strong>Voice Channel Behavior:</strong> Be mindful of your microphone settings. Use Push-to-Talk if required to minimize background noise. Avoid playing music or audio unless permitted, especially if it disrupts conversations.
+            </p>
+            <p>
+                <strong>Respecting Others' Speaking Time:</strong> Allow others to finish speaking before you contribute to the conversation. Interrupting is discouraged. If the voice channel is busy, be patient and wait for a natural pause before adding your input.
+            </p>
+            <p>
+                <strong>No Trolling:</strong> Trolling in voice channels, such as intentionally causing disturbances or impersonating others, is prohibited. Respect the purpose of the voice channel, whether it’s for gaming, discussion, or casual chat.
+            </p>
+
             <h3>Content Sharing and Media</h3>
-            <ul>
-                <li><strong>Appropriate Content:</strong> All content shared must be safe for work...</li>
-                <li><strong>Copyright and Fair Use:</strong> Respect copyright laws...</li>
-                <li><strong>Use of External Links:</strong> Be cautious when sharing links...</li>
-            </ul>
+            <p>
+                <strong>Appropriate Content:</strong> All content shared in the server must be safe for work (SFW) unless in explicitly marked NSFW channels. No graphic content, including explicit sexual content, extreme violence, or gore, is allowed.
+            </p>
+            <p>
+                <strong>Copyright and Fair Use:</strong> Respect copyright laws. Do not share pirated content or any material that violates copyright agreements. When sharing media, always credit the original creators if possible.
+            </p>
+            <p>
+                <strong>Use of External Links:</strong> Be cautious when sharing links. Do not share suspicious or harmful links that could compromise members’ security. Ensure that links are relevant to the conversation and do not lead to inappropriate content.
+            </p>
+
             <h3>Moderation and Enforcement</h3>
-            <ul>
-                <li><strong>Moderators' Authority:</strong> Please respect their decisions...</li>
-                <li><strong>Reporting Issues:</strong> If you witness rule-breaking, report it...</li>
-                <li><strong>Consequences of Misconduct:</strong> Depending on the severity...</li>
-                <li><strong>Appeals Process:</strong> If you believe you’ve been unjustly warned...</li>
-            </ul>
+            <p>
+                <strong>Moderators' Authority:</strong> Moderators are here to maintain a friendly environment. Please respect their decisions and instructions. If a moderator asks you to stop a behavior or adjust your communication style, comply immediately.
+            </p>
+            <p>
+                <strong>Reporting Issues:</strong> If you witness rule-breaking or harassment, report it to a moderator or admin rather than confronting the individual directly. All reports will be treated confidentially and investigated appropriately.
+            </p>
+            <p>
+                <strong>Consequences of Misconduct:</strong> Depending on the severity of the infraction, consequences can range from a warning to a temporary mute, kick, or permanent ban. Repeated offenses will lead to harsher penalties. A history of violations will be considered during enforcement.
+            </p>
+            <p>
+                <strong>Appeals Process:</strong> If you believe you’ve been unjustly warned or banned, you can appeal your case by contacting a moderator privately. Provide any evidence or context that supports your appeal. All appeals will be reviewed fairly, and a response will be provided as soon as possible.
+            </p>
+
             <h3>Events and Activities</h3>
-            <ul>
-                <li><strong>Participation Guidelines:</strong> Members are encouraged to participate...</li>
-                <li><strong>Fair Play and Sportsmanship:</strong> In competitions, display good sportsmanship...</li>
-                <li><strong>Feedback and Suggestions:</strong> Suggestions for future events are welcomed...</li>
-            </ul>
+            <p>
+                <strong>Participation Guidelines:</strong> Members are encouraged to participate in server events, contests, or game nights. Specific rules may apply for each event. Respect all participants and follow the guidelines set by event organizers.
+            </p>
+            <p>
+                <strong>Fair Play and Sportsmanship:</strong> In competitions or gaming sessions, display good sportsmanship. Winning is great, but respect for fellow players is paramount. Cheating or exploiting glitches is strictly prohibited.
+            </p>
+            <p>
+                <strong>Feedback and Suggestions:</strong> Suggestions for future events or improvements to the server are welcomed. Use the #suggestions channel for feedback. Constructive criticism is encouraged; however, it should be delivered respectfully.
+            </p>
+
             <h3>Final Notes</h3>
-            <ul>
-                <li><strong>Updates to Rules:</strong> These rules may be updated as needed...</li>
-                <li><strong>Enjoy Your Stay!</strong> We aim to create a welcoming environment...</li>
-            </ul>
+            <p>
+                <strong>Updates to Rules:</strong> These rules may be updated as needed. Members will be notified of any significant changes, and it’s your responsibility to stay informed. Regularly reviewing the rules will help maintain a positive environment.
+            </p>
+            <p>
+                <strong>Enjoy Your Stay!</strong> We aim to create a welcoming and enjoyable community for everyone. Don’t hesitate to engage, make friends, and contribute to discussions. If you have questions or need assistance, feel free to reach out to any moderator or member of the staff team.
+            </p>
         </div>
     </div>
 
-    <footer>
+    <script src="script.js"></script>
         <p>&copy; 2024 Aryo Corner. Wszystkie prawa zastrzeżone.</p>
     </footer>
 </body>
