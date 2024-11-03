@@ -3,94 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 powodów, dla których się z tobą przyjaźnię</title>
-    <style>
-        /* Ciemny motyw */
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            text-align: center;
-            max-width: 600px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #bb86fc;
-        }
-
-        #clickButton {
-            background-color: #03dac6;
-            color: #121212;
-            padding: 15px 30px;
-            font-size: 1.5rem;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        #clickButton:hover {
-            transform: scale(1.1);
-        }
-
-        #reasons {
-            margin-top: 20px;
-            list-style: none;
-            padding: 0;
-            display: none;
-            text-align: left;
-        }
-
-        #reasons li {
-            background-color: #333;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-    </style>
+    <title>Aryo Corner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Aryo Corner</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">O nas</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#tos" id="tos-button">TOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>O nas</h2>
+            <p>Witamy w Aryo Corner, miejscu dla wszystkich entuzjastów! Dołącz do naszej społeczności i baw się dobrze.</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <p>Masz pytania? Napisz do nas na <a href="mailto:contact@aryocorner.com">contact@aryocorner.com</a>.</p>
+        </section>
+    </main>
 
-<div class="container">
-    <h1>100 powodów, dla których się z tobą przyjaźnię</h1>
-    <button id="clickButton">Kliknij</button>
-    <ul id="reasons">
-        <!-- Tutaj są powody do wyświetlenia -->
-        <li>Jesteś zawsze przy mnie.</li>
-        <li>Masz świetne poczucie humoru.</li>
-        <li>Rozumiesz mnie jak nikt inny.</li>
-        <!-- Dodaj tutaj kolejne powody, aż do 100 -->
-    </ul>
-</div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Discord Server Rules</h2>
+            <h3>General Conduct</h3>
+            <ul>
+                <li><strong>Respect and Kindness:</strong> Treat all members with respect and kindness...</li>
+                <li><strong>No Hate Speech:</strong> Hate speech is strictly prohibited...</li>
+                <li><strong>Language:</strong> Use appropriate language at all times...</li>
+                <li><strong>Privacy and Personal Information:</strong> Do not share anyone’s personal information...</li>
+            </ul>
+            <h3>Chat and Communication</h3>
+            <ul>
+                <li><strong>Channel Guidelines:</strong> Each channel has a specific purpose...</li>
+                <li><strong>No Spamming:</strong> Spamming is defined as sending repetitive messages...</li>
+                <li><strong>Tagging and Mentions:</strong> Avoid tagging multiple users unnecessarily...</li>
+                <li><strong>No Advertising:</strong> Do not advertise other Discord servers...</li>
+            </ul>
+            <h3>Voice Channels</h3>
+            <ul>
+                <li><strong>Voice Channel Behavior:</strong> Be mindful of your microphone settings...</li>
+                <li><strong>Respecting Others' Speaking Time:</strong> Allow others to finish speaking...</li>
+                <li><strong>No Trolling:</strong> Trolling in voice channels is prohibited...</li>
+            </ul>
+            <h3>Content Sharing and Media</h3>
+            <ul>
+                <li><strong>Appropriate Content:</strong> All content shared must be safe for work...</li>
+                <li><strong>Copyright and Fair Use:</strong> Respect copyright laws...</li>
+                <li><strong>Use of External Links:</strong> Be cautious when sharing links...</li>
+            </ul>
+            <h3>Moderation and Enforcement</h3>
+            <ul>
+                <li><strong>Moderators' Authority:</strong> Please respect their decisions...</li>
+                <li><strong>Reporting Issues:</strong> If you witness rule-breaking, report it...</li>
+                <li><strong>Consequences of Misconduct:</strong> Depending on the severity...</li>
+                <li><strong>Appeals Process:</strong> If you believe you’ve been unjustly warned...</li>
+            </ul>
+            <h3>Events and Activities</h3>
+            <ul>
+                <li><strong>Participation Guidelines:</strong> Members are encouraged to participate...</li>
+                <li><strong>Fair Play and Sportsmanship:</strong> In competitions, display good sportsmanship...</li>
+                <li><strong>Feedback and Suggestions:</strong> Suggestions for future events are welcomed...</li>
+            </ul>
+            <h3>Final Notes</h3>
+            <ul>
+                <li><strong>Updates to Rules:</strong> These rules may be updated as needed...</li>
+                <li><strong>Enjoy Your Stay!</strong> We aim to create a welcoming environment...</li>
+            </ul>
+        </div>
+    </div>
 
-<script>
-    document.getElementById("clickButton").addEventListener("click", function() {
-        const reasons = document.getElementById("reasons");
-        reasons.style.display = "block";
-        const listItems = reasons.querySelectorAll("li");
-
-        // Animacja pojawienia się powodów jeden po drugim
-        listItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = 1;
-                item.style.transform = "translateX(0)";
-            }, index * 100); // czas między kolejnymi punktami
-        });
-    });
-</script>
-
+    <footer>
+        <p>&copy; 2024 Aryo Corner. Wszystkie prawa zastrzeżone.</p>
+    </footer>
 </body>
 </html>
+
